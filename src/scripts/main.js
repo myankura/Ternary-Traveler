@@ -1,8 +1,11 @@
-import sayHello from "./hello"
-import sayGoodbye from "./goodbye"
-import SandwichMaker from "./sandwichMaker"
+import apiManager from "./apiManager.js"
+//Test api call by getting all places
+apiManager.allPlaces("places").then(placesArray => {
+    console.table(placesArray)
+});
 
-sayHello()
-sayGoodbye()
-
-SandwichMaker.placeOrder("rye", "capicola", "provolone")
+// fetch("http://localhost:8088/food")
+//     .then(foods => foods.json())
+//     .then(parsedFoods => {
+//         console.table(parsedFoods)
+//     })
