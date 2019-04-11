@@ -1,4 +1,5 @@
 import domManager from "../domManager.js"
+import eventManager from "../eventManager.js"
 
 export default {
     addPlaceForm() {
@@ -32,7 +33,8 @@ export default {
         selectElement.appendChild(domManager.buildOption("mumbai", "Mumbai"))
 
         //create a save button to save input passed through by user
-        formContainer.appendChild(domManager.elementBuilder("button", "placeToSave", "Save POI"))
+        let formSaveButton = formContainer.appendChild(domManager.elementBuilder("button", "placeToSave", "Save POI"))
+        formSaveButton.addEventListener("click", eventManager.handleSave)
     }
 }
 
