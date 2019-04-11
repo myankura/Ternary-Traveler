@@ -35,12 +35,8 @@ export default {
         //create a save button to save input passed through by user
         let formSaveButton = formContainer.appendChild(domManager.elementBuilder("button", "placeToSave", "Save POI"))
         formSaveButton.addEventListener("click", eventManager.handleSave)
+    },
+    //add an edit form feature
+    editPlaceForm () {
     }
 }
-
-
-
-// //create a label and input field for the POI review
-// formContainer.appendChild(domManager.elementBuilder("label", undefined, "Review: ", undefined))
-// let reviewInput = formContainer.appendChild(domManager.elementBuilder("textarea", "placeReview"))
-// reviewInput.placeholder = "Please enter a review"
