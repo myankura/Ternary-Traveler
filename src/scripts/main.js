@@ -1,6 +1,6 @@
 import apiManager from "./apiManager.js"
-import domManager from "./apiManager.js"
 import placesDomMan from "./places/placesDomManager.js"
+import formManager from "./places/placesForm.js"
 //Test api call by getting all places
 apiManager.allDataByKey("places").then(placesArray => {
     console.table(placesArray)
@@ -16,4 +16,5 @@ apiManager.dataById("interests", "1").then(interestsData => {
     console.log(interestsData)
 });
 
+formManager.addPlaceForm();
 placesDomMan.listAllPOI();
