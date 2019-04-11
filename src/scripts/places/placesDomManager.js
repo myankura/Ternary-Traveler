@@ -23,7 +23,6 @@ export default {
                 childPOI.appendChild(domManager.elementBuilder("p", `interestReview--${interest.id}`, `Review: ${interest.review}`))
                 //create a button for deleting a interest from API
                 let deleteFormButton = childPOI.appendChild(domManager.elementBuilder("button", `placeToDelete--${interest.id}`, "Delete POI", "Delete"))
-
                 //create a button for editing a interest in the API
                 let editFormButton = childPOI.appendChild(domManager.elementBuilder("button", `placeToEdit--${interest.id}`, "Edit POI", "Edit"))
             }))
