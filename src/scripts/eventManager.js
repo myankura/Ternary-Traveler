@@ -17,7 +17,7 @@ export default {
             description: placeDescription.value,
             cost: placeCost.value
         }
-        //Push data to API
+        //Push data to API via save button
         console.log(newInterest)
         apiManager.postAllData("interests",  newInterest)
         .then(() => {
@@ -28,6 +28,7 @@ export default {
         })
 
     },
+    //Delete data from the API via delete button
     handleDelete: () => {
         console.log(event)
         console.log("delete button clicked", event.target.id.split("--")[1])
@@ -39,10 +40,3 @@ export default {
         console.log("edit button clicked")
     }
 }
-
-// handleDelete: () => {
-//     console.log(event)
-//     console.log("Delete button clicked!!", event.target.id.split("--")[1])
-//     let eventId = event.target.id.split("--")[1];
-//     apiManager.delFetch("events", eventId).then(() =>  eventsDom.listAllEvents());
-// }
