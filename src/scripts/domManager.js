@@ -14,6 +14,14 @@ export default {
         htmlElement.textContent = elementTextContent;
         return htmlElement;
     },
+    //Function to create option elements
+    buildOption: (optionValue, optionText) => {
+        let optionElement = document.querySelector("#places--select");
+        optionElement = document.createElement("option");
+        optionElement.setAttribute("name", optionValue);
+        optionElement.textContent = optionText;
+        return optionElement;
+    },
     //Function to clear the DOM when necessary
     clearElement: domElement => {
         while(domElement.firstChild) {

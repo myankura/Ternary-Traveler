@@ -1,0 +1,5 @@
+#places--form {
+    display: flex;
+    flex-flow: column;
+    max-width: 500px;
+}

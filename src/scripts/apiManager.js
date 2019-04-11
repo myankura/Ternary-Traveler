@@ -8,5 +8,21 @@ export default {
     dataById: (key, objectId) => {
         return fetch(`${apiUrl}/${key}/${objectId}`)
             .then(response => response.json())
-    }
+    },
+    postAllData: (key, objectId) => {
+
+        return fetch(`${apiUrl}/${key}`, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(objectId)
+        })
+    },
+
+    delFetch: (key, itemId) => {
+        return fetch(`${apiUrl}/${key}/${itemId}`, {
+            method: "DELETE",
+        })
+    },
 }

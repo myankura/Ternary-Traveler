@@ -1,5 +1,6 @@
 import domManager from "../domManager.js"
 import apiManager from "../apiManager.js"
+import eventManager from "../eventManager.js"
 
 export default {
     //runs through a loop through all of the places in API and appends to the DOM
@@ -9,7 +10,7 @@ export default {
         domManager.clearElement(childPOI);
         apiManager.allDataByKey("interests")
             .then(interests => interests.forEach(interest => {
-                console.log("interestsArray: ", interests)
+                // console.log("interestsArray: ", interests)
                 //targets interests by id and returns the name of the interest and then appends to the DOM.
                 childPOI.appendChild(domManager.elementBuilder("h3", `interestName--${interest.id}`,`POI: ${interest.name}`))
 
@@ -23,14 +24,15 @@ export default {
                 childPOI.appendChild(domManager.elementBuilder("p", `interestReview--${interest.id}`, `Review: ${interest.review}`))
                 //create a button for deleting a interest from API
                 let deleteFormButton = childPOI.appendChild(domManager.elementBuilder("button", `placeToDelete--${interest.id}`, "Delete POI", "Delete"))
-
+                deleteFormButton.addEventListener("click", eventManager.handleDelete)
                 //create a button for editing a interest in the API
                 let editFormButton = childPOI.appendChild(domManager.elementBuilder("button", `placeToEdit--${interest.id}`, "Edit POI", "Edit"))
-            }))
-        }
+                editFormButton.addEventListener("click", eventManager.handleEdit)
+            }))},
+            childInterestsContainer() {
+                //target places--section
+                let placeContainer = document.getElementById("places--section")
+                let childPOI = domManager.elementBuilder("section", "places--section")
+                placeContainer.appendChild(childPOI)
+            }
     }
-
-
-
-    // //targets interests by id and then returns whether a visa is required and then appends to the DOM.
-    // childPOI.appendChild(domManager.elementBuilder("article", `placeVisa--${interest.id}`, `Visa required: ${interest.visa_required}`))

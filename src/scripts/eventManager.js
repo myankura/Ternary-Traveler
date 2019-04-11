@@ -31,7 +31,6 @@ export default {
     handleDelete: () => {
         console.log(event)
         console.log("delete button clicked")
-a
 
     },
     handleEdit: () => {
