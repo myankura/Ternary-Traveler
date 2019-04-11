@@ -20,7 +20,7 @@ export default {
         })
     },
 
-    delFetch: (key, itemId) => {
+    delData: (key, itemId) => {
         return fetch(`${apiUrl}/${key}/${itemId}`, {
             method: "DELETE",
         })

@@ -30,7 +30,9 @@ export default {
     },
     handleDelete: () => {
         console.log(event)
-        console.log("delete button clicked")
+        console.log("delete button clicked", event.target.id.split("--")[1])
+        let interestId = event.target.id.split("--")[1];
+        apiManager.delData("interests", interestId).then(() => placesDom.listAllPOI());
 
     },
     handleEdit: () => {
