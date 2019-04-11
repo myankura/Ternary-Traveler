@@ -17,7 +17,7 @@ export default {
             description: placeDescription.value,
             cost: placeCost.value
         }
-        //Push data to API
+        //Push data to API via save button
         console.log(newInterest)
         apiManager.postAllData("interests",  newInterest)
         .then(() => {
@@ -28,8 +28,12 @@ export default {
         })
 
     },
+    //Delete data from the API via delete button
     handleDelete: () => {
-        console.log("delete button clicked")
+        console.log(event)
+        console.log("delete button clicked", event.target.id.split("--")[1])
+        let interestId = event.target.id.split("--")[1];
+        apiManager.delData("interests", interestId).then(() => placesDom.listAllPOI());
 
     },
     handleEdit: () => {
