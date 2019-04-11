@@ -10,7 +10,7 @@ export default {
         domManager.clearElement(childPOI);
         apiManager.allDataByKey("interests")
             .then(interests => interests.forEach(interest => {
-                console.log("interestsArray: ", interests)
+                // console.log("interestsArray: ", interests)
                 //targets interests by id and returns the name of the interest and then appends to the DOM.
                 childPOI.appendChild(domManager.elementBuilder("h3", `interestName--${interest.id}`,`POI: ${interest.name}`))
 
@@ -28,6 +28,11 @@ export default {
                 //create a button for editing a interest in the API
                 let editFormButton = childPOI.appendChild(domManager.elementBuilder("button", `placeToEdit--${interest.id}`, "Edit POI", "Edit"))
                 editFormButton.addEventListener("click", eventManager.handleEdit)
-            }))
-        }
+            }))},
+            childInterestsContainer() {
+                //target places--section
+                let placeContainer = document.getElementById("places--section")
+                let childPOI = domManager.elementBuilder("section", "places--section")
+                placeContainer.appendChild(childPOI)
+            }
     }

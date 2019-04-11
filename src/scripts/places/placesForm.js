@@ -25,12 +25,12 @@ export default {
         let costInput = formContainer.appendChild(domManager.elementBuilder("input", "placeCost"))
         costInput.placeholder = "Please enter the cost to visit"
 
-        //create a dropdown to accept the place where the POI is located
-        formContainer.appendChild(domManager.elementBuilder("label", undefined, "POI location: ", undefined))
-        let selectElement = formContainer.appendChild(domManager.elementBuilder("select", "place--select"))
-        selectElement.appendChild(domManager.buildOption("kathmandu", "Kathmandu"))
-        selectElement.appendChild(domManager.buildOption("dhaka", "Dhaka"))
-        selectElement.appendChild(domManager.buildOption("mumbai", "Mumbai"))
+        // //create a dropdown to accept the place where the POI is located
+        // formContainer.appendChild(domManager.elementBuilder("label", undefined, "POI location: ", undefined))
+        // let selectElement = formContainer.appendChild(domManager.elementBuilder("select", "place--select"))
+        // selectElement.appendChild(domManager.buildOption("kathmandu", "Kathmandu"))
+        // selectElement.appendChild(domManager.buildOption("dhaka", "Dhaka"))
+        // selectElement.appendChild(domManager.buildOption("mumbai", "Mumbai"))
 
         //create a save button to save input passed through by user
         let formSaveButton = formContainer.appendChild(domManager.elementBuilder("button", "placeToSave", "Save POI"))
