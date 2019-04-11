@@ -28,8 +28,3 @@ export default {
             }))
         }
     }
-
-
-
-    // //targets interests by id and then returns whether a visa is required and then appends to the DOM.
-    // childPOI.appendChild(domManager.elementBuilder("article", `placeVisa--${interest.id}`, `Visa required: ${interest.visa_required}`))
